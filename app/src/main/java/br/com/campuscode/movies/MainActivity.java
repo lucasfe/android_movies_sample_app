@@ -1,5 +1,6 @@
 package br.com.campuscode.movies;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements MoviesAdapter.Ite
 
     @Override
     public void onItemClick(View view, int position) {
-        Toast.makeText(this, "Testing Recycler view", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Testing Recycler view. Position: " + position, Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this, DetailsActivity.class));
     }
 }

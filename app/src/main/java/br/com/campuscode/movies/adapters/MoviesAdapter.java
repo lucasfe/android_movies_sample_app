@@ -57,7 +57,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
 
         @Override
         public void onClick(View view) {
-            Log.v("TAG", "Teste");
+            mClickListener.onItemClick(view, getAdapterPosition());
         }
     }
 
