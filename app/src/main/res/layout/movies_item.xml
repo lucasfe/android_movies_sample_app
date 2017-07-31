@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="20dp"
+    android:padding="10dp"
     android:layout_marginLeft="5dp">
 
     <ImageView
@@ -10,6 +10,30 @@
         android:scaleType="fitXY"
         android:layout_width="130dp"
         android:layout_height="230dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:background="#80000000"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@android:color/white"
+            android:text="Luketa"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="8sp"
+            android:textColor="@android:color/white"
+            android:text="Romance"/>
+
+
+    </LinearLayout>
 
 
 </LinearLayout>
