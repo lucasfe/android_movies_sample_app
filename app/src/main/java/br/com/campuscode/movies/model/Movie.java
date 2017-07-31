@@ -1,22 +1,19 @@
 package br.com.campuscode.movies.model;
 
-import java.util.Date;
-
 public class Movie {
 
-    String name;
+    String title;
     String overview;
-    int duration;
-    Date releaseDate;
-    float voteAverage;
-    int voteCount;
+    String release_date;
+    float vote_average;
+    int vote_count;
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getOverview() {
@@ -27,35 +24,27 @@ public class Movie {
         this.overview = overview;
     }
 
-    public int getDuration() {
-        return duration;
+    public String getRelease_date() {
+        return release_date;
     }
 
-    public void setDuration(int duration) {
-        this.duration = duration;
+    public void setRelease_date(String release_date) {
+        this.release_date = release_date;
     }
 
-    public Date getReleaseDate() {
-        return releaseDate;
+    public float getVote_average() {
+        return vote_average;
     }
 
-    public void setReleaseDate(Date releaseDate) {
-        this.releaseDate = releaseDate;
+    public void setVote_average(float vote_average) {
+        this.vote_average = vote_average;
     }
 
-    public float getVoteAverage() {
-        return voteAverage;
+    public int getVote_count() {
+        return vote_count;
     }
 
-    public void setVoteAverage(float voteAverage) {
-        this.voteAverage = voteAverage;
-    }
-
-    public int getVoteCount() {
-        return voteCount;
-    }
-
-    public void setVoteCount(int voteCount) {
-        this.voteCount = voteCount;
+    public void setVote_count(int vote_count) {
+        this.vote_count = vote_count;
     }
 }

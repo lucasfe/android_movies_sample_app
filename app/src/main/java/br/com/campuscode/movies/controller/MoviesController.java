@@ -5,17 +5,16 @@ import android.util.Log;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.util.List;
-
 import br.com.campuscode.movies.api.MoviesAPI;
 import br.com.campuscode.movies.model.Movie;
+import br.com.campuscode.movies.model.MovieResult;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MoviesController implements Callback<List<Movie>> {
+public class MoviesController implements Callback<MovieResult> {
 
     static final String BASE_URL = "https://api.themoviedb.org/3/";
 
@@ -31,16 +30,16 @@ public class MoviesController implements Callback<List<Movie>> {
 
         MoviesAPI moviesAPI = retrofit.create(MoviesAPI.class);
 
-        Call<List<Movie>> call = moviesAPI.getMostPopularMovies();
+        Call<MovieResult> call = moviesAPI.getMostPopularMovies();
         call.enqueue(this);
     }
 
     @Override
-    public void onResponse(Call<List<Movie>> call, Response<List<Movie>> response) {
+    public void onResponse(Call<MovieResult> call, Response<MovieResult> response) {
         if (response.isSuccessful()) {
-            List<Movie> moviesList = response.body();
-            for (Movie movie : moviesList) {
-                Log.d("Movie", "Movie: " + movie.getName());
+            MovieResult moviesList = response.body();
+            for (Movie movie : moviesList.getResults()) {
+                Log.d("Movie", "Movie: " + movie.getTitle());
             }
         }
         else {
@@ -49,7 +48,7 @@ public class MoviesController implements Callback<List<Movie>> {
     }
 
     @Override
-    public void onFailure(Call<List<Movie>> call, Throwable t) {
+    public void onFailure(Call<MovieResult> call, Throwable t) {
         t.printStackTrace();
     }
 }

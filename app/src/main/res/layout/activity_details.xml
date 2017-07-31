@@ -47,12 +47,6 @@
                 android:text="Release Date" />
 
             <TextView
-                android:id="@+id/movie_duration"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Duration" />
-
-            <TextView
                 android:id="@+id/movie_vote_average"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
