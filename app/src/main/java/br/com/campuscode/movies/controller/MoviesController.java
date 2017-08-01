@@ -5,6 +5,7 @@ import android.util.Log;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import br.com.campuscode.movies.Config;
 import br.com.campuscode.movies.api.MoviesAPI;
 import br.com.campuscode.movies.model.Movie;
 import br.com.campuscode.movies.model.MovieResult;
@@ -16,15 +17,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MoviesController implements Callback<MovieResult> {
 
-    static final String BASE_URL = "https://api.themoviedb.org/3/";
-
     public void start() {
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(Config.BASE_API_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

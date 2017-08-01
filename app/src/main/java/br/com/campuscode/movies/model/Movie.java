@@ -1,5 +1,7 @@
 package br.com.campuscode.movies.model;
 
+import br.com.campuscode.movies.Config;
+
 public class Movie {
 
     String title;
@@ -7,44 +9,35 @@ public class Movie {
     String release_date;
     float vote_average;
     int vote_count;
+    String backdrop_path;
+    String poster_path;
 
     public String getTitle() {
         return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public String getOverview() {
         return overview;
     }
 
-    public void setOverview(String overview) {
-        this.overview = overview;
-    }
-
-    public String getRelease_date() {
+    public String getReleaseDate() {
         return release_date;
     }
 
-    public void setRelease_date(String release_date) {
-        this.release_date = release_date;
-    }
 
-    public float getVote_average() {
+    public float getVoteAverage() {
         return vote_average;
     }
 
-    public void setVote_average(float vote_average) {
-        this.vote_average = vote_average;
-    }
-
-    public int getVote_count() {
+    public int getVoteCount() {
         return vote_count;
     }
 
-    public void setVote_count(int vote_count) {
-        this.vote_count = vote_count;
+    public String getBackdropPath() {
+        return Config.BACKDROP_BASE_PATH + backdrop_path;
+    }
+
+    public String getPosterPath() {
+        return Config.POSTER_BASE_PATH + poster_path;
     }
 }
