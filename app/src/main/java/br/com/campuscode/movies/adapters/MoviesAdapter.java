@@ -1,9 +1,7 @@
 package br.com.campuscode.movies.adapters;
 
 import android.content.Context;
-import android.media.Image;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,16 +10,17 @@ import android.widget.ImageView;
 import java.util.List;
 
 import br.com.campuscode.movies.R;
+import br.com.campuscode.movies.model.Movie;
 
 public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder>{
 
-    private List<String> mImagesUrls;
+    private List<Movie> mMovies;
     private Context mContext;
     private LayoutInflater inflater;
     ItemClickListener mClickListener;
 
-    public MoviesAdapter(Context context, List<String> imagesUrls) {
-        mImagesUrls = imagesUrls;
+    public MoviesAdapter(Context context, List<Movie> movieList) {
+        mMovies = movieList;
         mContext = context;
         inflater = LayoutInflater.from(mContext);
     }
@@ -41,7 +40,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
 
     @Override
     public int getItemCount() {
-        return mImagesUrls.size();
+        return mMovies.size();
     }
 
 

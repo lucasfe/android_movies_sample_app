@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.campuscode.movies.adapters.MoviesAdapter;
+import br.com.campuscode.movies.model.Movie;
 
 public class MainActivity extends AppCompatActivity implements MoviesAdapter.ItemClickListener {
 
@@ -34,11 +35,13 @@ public class MainActivity extends AppCompatActivity implements MoviesAdapter.Ite
             urls.add("www.teste.com");
 
 
+            List<Movie> movies = new ArrayList<>();
+
             // set up the RecyclerView
             RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rv_movies);
             int numberOfColumns = 2;
             recyclerView.setLayoutManager(new GridLayoutManager(this, numberOfColumns));
-            adapter = new MoviesAdapter(this, urls);
+            adapter = new MoviesAdapter(this, movies);
             adapter.setClickListener(this);
             recyclerView.setAdapter(adapter);
 
