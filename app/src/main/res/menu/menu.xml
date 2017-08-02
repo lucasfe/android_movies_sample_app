@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_load_movies_popularity_desc"
+        android:title="Movies by Popularity (desc)" />
+
+    <item
+        android:id="@+id/action_load_movies_popularity_asc"
+        android:title="Movies by Popularity (asc)" />
+
+    <item
+        android:id="@+id/action_load_movies_average_desc"
+        android:title="Movies by Vote Average (desc)" />
+
+    <item
+        android:id="@+id/action_load_movies_average_asc"
+        android:title="Movies by Vote Average (asc)" />
+
+    <item
+        android:id="@+id/action_load_movies_vote_count_desc"
+        android:title="Movies by Vote Count (desc)" />
+
+    <item
+        android:id="@+id/action_load_movies_vote_count_asc"
+        android:title="Movies by Vote Count (asc)" />
+
+</menu>

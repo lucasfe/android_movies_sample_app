@@ -1,73 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="br.com.campuscode.movies.DetailsActivity">
 
-    <RelativeLayout
-        android:id="@+id/movie_top"
+    <ImageView
+        android:id="@+id/movie_backdrop"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:maxHeight="204dp"
+        android:cropToPadding="false"
+        android:padding="2dp"
+        android:scaleType="fitStart" />
 
+    <LinearLayout
+        android:id="@+id/movie_main_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/movie_backdrop"
+        android:orientation="vertical"
+        android:padding="5dp">
 
-        <ImageView
-            android:id="@+id/movie_poster"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:cropToPadding="false"
-            android:maxHeight="250dp"
-            android:padding="2dp"
-            android:scaleType="fitStart"
-            app:srcCompat="@drawable/moonlight" />
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/movie_title"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignBottom="@+id/movie_poster"
-            android:layout_toRightOf="@+id/movie_poster"
-            android:orientation="vertical"
-            android:padding="5dp">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Name"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/movie_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:text="Name"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/movie_release_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Release Date" />
 
-            <TextView
-                android:id="@+id/movie_release_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Release Date" />
+        <TextView
+            android:id="@+id/movie_vote_average"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Average" />
 
-            <TextView
-                android:id="@+id/movie_vote_average"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="Average" />
-
-            <TextView
-                android:id="@+id/movie_votes"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Votes" />
-        </LinearLayout>
-
-    </RelativeLayout>
+        <TextView
+            android:id="@+id/movie_votes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Votes" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/movie_description_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:layout_below="@+id/movie_top"
+        android:layout_below="@+id/movie_main_info"
         android:minHeight="300dp"
         android:orientation="vertical">
 
@@ -77,6 +66,7 @@
             android:layout_height="wrap_content"
             android:minHeight="300dp"
             android:padding="5dp"
-            android:text="Description/Overview" />
+            android:text="Description/Overview"
+            android:textStyle="italic" />
     </LinearLayout>
 </RelativeLayout>

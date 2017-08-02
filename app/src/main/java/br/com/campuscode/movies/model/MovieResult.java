@@ -1,11 +1,15 @@
 package br.com.campuscode.movies.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class MovieResult {
 
     int page;
+    @SerializedName("total_results")
     int totalResults;
+    @SerializedName("total_pages")
     int totalPages;
     List<Movie> results;
 
